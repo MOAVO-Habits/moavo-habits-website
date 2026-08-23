@@ -1,0 +1,14 @@
+{
+  "Metadata": {
+    "title": "MOAVO Habits",
+    "description": "하루하루 더 나은 습관을 만들어보세요."
+  },
+  "Nav": {
+    "home": "홈",
+    "blog": "블로그"
+  },
+  "HomePage": {
+    "title": "MOAVO Habits에 오신 것을 환영합니다",
+    "subtitle": "지금은 프로젝트 뼈대 단계입니다. 실제 콘텐츠는 다음 단계에서 채워질 예정입니다."
+  }
+}

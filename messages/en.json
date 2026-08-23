@@ -1,0 +1,14 @@
+{
+  "Metadata": {
+    "title": "MOAVO Habits",
+    "description": "Build better habits, one day at a time."
+  },
+  "Nav": {
+    "home": "Home",
+    "blog": "Blog"
+  },
+  "HomePage": {
+    "title": "Welcome to MOAVO Habits",
+    "subtitle": "This is the project skeleton. Real content is coming in the next step."
+  }
+}
