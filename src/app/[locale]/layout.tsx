@@ -5,6 +5,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { pretendard, lobster, plaster } from "@/fonts";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -41,8 +42,11 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className="min-h-screen bg-white text-neutral-900 antialiased">
+    <html
+      lang={locale}
+      className={`${pretendard.variable} ${lobster.variable} ${plaster.variable}`}
+    >
+      <body className="min-h-screen bg-pure-white font-sans text-rich-black antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

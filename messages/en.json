@@ -5,10 +5,188 @@
   },
   "Nav": {
     "home": "Home",
+    "about": "About",
+    "app": "App",
+    "faq": "FAQ",
     "blog": "Blog"
   },
+  "FaqPage": {
+    "headline": "Frequently Asked Questions",
+    "categories": [
+      {
+        "title": "[EN copy pending]",
+        "items": [
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" },
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" },
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" }
+        ]
+      },
+      {
+        "title": "[EN copy pending]",
+        "items": [
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" },
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" },
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" }
+        ]
+      },
+      {
+        "title": "[EN copy pending]",
+        "items": [
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" },
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" }
+        ]
+      },
+      {
+        "title": "[EN copy pending]",
+        "items": [
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" },
+          { "q": "[EN copy pending]", "a": "[EN copy pending]" }
+        ]
+      }
+    ]
+  },
+  "AboutPage": {
+    "moavo": {
+      "headline": "MOAVO Habits started from one belief: habits aren't built by willpower. They're built by systems.",
+      "body": "Most people don't fail at habits because they're lazy. They fail because no one ever designed a structure simple enough to survive a bad day. MOAVO is that structure.\n\nOne tap, one dot, one small nudge from AVO, your AI running mate, every single day.",
+      "belief": "We believe: small care, put into even the smallest action, changes you. Each change is a small win. And small wins, stacked one on another, become the momentum that carries you somewhere big.",
+      "slogan": "Small care. Small wins. Real momentum."
+    },
+    "founder": {
+      "headline": "MOAVO Habits was founded by JAE Dokgo, a behavior system designer.",
+      "body": "Before this app, JAE spent years designing physical spaces — retail stores, restaurants, cafeterias, offices, hospitals. Different contexts, but the same underlying question every time: how does this layout shape the way people move, decide, and behave?\n\nThat work taught a simple truth: people don't change because they try harder. They change because their environment makes the right behavior the easy one.",
+      "connector": "MOAVO Habits is that same principle, applied to a phone screen instead of a floor plan.",
+      "legalName": "Legal name: Jae-Young Dokgo — referenced in official documents."
+    },
+    "cta": {
+      "headline": "Your story can start here too.",
+      "subtext": "Go ahead — place your first dot right now.",
+      "ctaAppStore": "Download on App Store",
+      "ctaGooglePlay": "Get it on Google Play"
+    }
+  },
+  "AppPage": {
+    "hero": {
+      "headline": "[EN copy pending]",
+      "body": "[EN copy pending]",
+      "ctaAppStore": "Download on App Store",
+      "ctaGooglePlay": "Get it on Google Play"
+    },
+    "pillar1": {
+      "headline": "[EN copy pending]",
+      "body": "[EN copy pending]"
+    },
+    "pillar2": {
+      "headline": "[EN copy pending]",
+      "items": [
+        { "subtitle": "[EN copy pending]", "body": "[EN copy pending]" },
+        { "subtitle": "[EN copy pending]", "body": "[EN copy pending]" },
+        { "subtitle": "[EN copy pending]", "body": "[EN copy pending]" },
+        { "subtitle": "[EN copy pending]", "body": "[EN copy pending]" }
+      ]
+    },
+    "pillar3": {
+      "headline": "[EN copy pending]",
+      "items": [
+        { "subtitle": "[EN copy pending]", "body": "[EN copy pending]" },
+        { "subtitle": "[EN copy pending]", "body": "[EN copy pending]" }
+      ]
+    },
+    "audience": {
+      "headline": "[EN copy pending]",
+      "items": [
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]",
+        "[EN copy pending]"
+      ]
+    },
+    "pricing": {
+      "headline": "[EN copy pending]",
+      "free": {
+        "label": "Free",
+        "description": "[EN copy pending]"
+      },
+      "premium": {
+        "label": "Premium",
+        "description": "[EN copy pending]"
+      },
+      "ctaAppStore": "Download on App Store",
+      "ctaGooglePlay": "Get it on Google Play"
+    }
+  },
   "HomePage": {
-    "title": "Welcome to MOAVO Habits",
-    "subtitle": "This is the project skeleton. Real content is coming in the next step."
+    "hero": {
+      "headline": "One dot, one habit.",
+      "subheadline": "Not willpower — a structure builds the habit. Today's small dot becomes your great future.",
+      "ctaAppStore": "Download on App Store",
+      "ctaGooglePlay": "Get it on Google Play"
+    },
+    "problem": {
+      "headline": "Why can't we build habits?",
+      "body": "Every year we make plans, and most end within three days. We blame it on our own lack of willpower. But that's not the real problem. We never had a system to sustain it and turn it into a habit.",
+      "points": [
+        "I keep forgetting to do it every day",
+        "I couldn't see how much progress I'd made, so I gave up",
+        "It was too hard to keep going alone"
+      ]
+    },
+    "solution": {
+      "headline": "MOAVO Habits supports the momentum you're building — even today, when you haven't given up.",
+      "body": "MOAVO Habits isn't just a habit tracker — it's a behavior-science-based active habit management system. Log a habit, and you turn yourself into data. Analyze that data, and behavior patterns emerge. See your patterns, and confidence grows. Confidence creates your next action. That's how small daily actions stack into your great momentum.",
+      "positioning": "The world only looks at outcomes. MOAVO Habits looks at your process — your dots."
+    },
+    "features": {
+      "headline": "Core Features",
+      "items": [
+        {
+          "title": "Easy daily logging",
+          "description": "Simple, fast, and completely free-form"
+        },
+        {
+          "title": "Visualized statistics",
+          "description": "Daily, monthly, 100-day, and yearly heatmaps"
+        },
+        {
+          "title": "AI coach AVO",
+          "description": "AVO reads your behavior patterns and speaks to you"
+        },
+        {
+          "title": "Emotional UX",
+          "description": "Powerful haptics, sound, and Lottie animations make logging fun"
+        }
+      ]
+    },
+    "audience": {
+      "headline": "Who it's for",
+      "items": [
+        {
+          "title": "For people with real, quiet struggles",
+          "description": "No one's watching, no one's cheering — but you haven't given up hope."
+        },
+        {
+          "title": "For people in their dormant potential phase",
+          "description": "Right now you can't see what's ahead, but if you don't give up, momentum will come. MOAVO Habits is the system that helps you endure that phase."
+        }
+      ]
+    },
+    "avo": {
+      "headline": "Your running mate, AVO",
+      "body": "AVO is MOAVO Habits' AI habit coach. It cheers you on every time you log, and gives you feedback based on your data. On good days and hard days alike, AVO stays with you — not just saying 'hang in there' and leaving, but showing up every day until your good days really come."
+    },
+    "cta": {
+      "headline": "Today's small dot becomes your great future.",
+      "subtext": "Just start now. Just one.",
+      "ctaAppStore": "Download on App Store",
+      "ctaGooglePlay": "Get it on Google Play"
+    }
   }
 }
