@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { pretendard, lobster, plaster } from "@/fonts";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema, webSiteSchema } from "@/lib/schema";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -47,6 +49,7 @@ export default async function LocaleLayout({
       className={`${pretendard.variable} ${lobster.variable} ${plaster.variable}`}
     >
       <body className="min-h-screen bg-pure-white font-sans text-rich-black antialiased">
+        <JsonLd data={[organizationSchema(), webSiteSchema()]} />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
