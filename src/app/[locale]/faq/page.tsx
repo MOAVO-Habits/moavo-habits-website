@@ -2,6 +2,8 @@ import { useLocale, useTranslations } from "next-intl";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Accordion from "@/components/Accordion";
+import JsonLd from "@/components/JsonLd";
+import { faqPageSchema } from "@/lib/schema";
 
 type Category = {
   title: string;
@@ -16,6 +18,7 @@ export default function FaqPage() {
 
   return (
     <>
+      <JsonLd data={faqPageSchema(categories)} />
       <Header locale={locale} />
 
       <main>
