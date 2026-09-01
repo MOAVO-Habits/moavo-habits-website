@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MultilineText from "@/components/MultilineText";
 import StoreButtons from "@/components/StoreButtons";
+import JsonLd from "@/components/JsonLd";
+import { personSchema } from "@/lib/schema";
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
@@ -15,6 +17,7 @@ export default function AboutPage() {
 
   return (
     <>
+      <JsonLd data={personSchema({ locale })} />
       <Header locale={locale} />
 
       <main>
