@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import MultilineText from "@/components/MultilineText";
 import StoreButtons from "@/components/StoreButtons";
 import FeatureRow from "@/components/FeatureRow";
+import JsonLd from "@/components/JsonLd";
+import { softwareApplicationSchema } from "@/lib/schema";
 
 type PillarItem = {
   subtitle: string;
@@ -34,6 +36,7 @@ export default function AppPage() {
 
   return (
     <>
+      <JsonLd data={softwareApplicationSchema({ locale })} />
       <Header locale={locale} />
 
       <main>
