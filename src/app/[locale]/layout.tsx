@@ -64,6 +64,11 @@ export async function generateMetadata({
       description,
       images: [`${SITE.url}/logo/logo-icon.png`],
     },
+    verification: {
+      other: {
+        "naver-site-verification": "2b0bec4705d11d28b01e23b7f4d428185b5ef572",
+      },
+    },
   };
 }
 
