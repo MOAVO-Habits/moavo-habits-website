@@ -7,7 +7,7 @@ import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { pretendard, lobster, plaster } from "@/fonts";
 import JsonLd from "@/components/JsonLd";
-import { organizationSchema, webSiteSchema } from "@/lib/schema";
+import { organizationSchema, webSiteSchema, SITE } from "@/lib/schema";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -22,9 +22,48 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
+  const title = t("title");
+  const description = t("description");
+
+  // Per-locale canonical + hreflang alternates so Google treats /en and /ko
+  // as language variants of one page rather than duplicate content.
+  const languages = Object.fromEntries(
+    routing.locales.map((l) => [l, `${SITE.url}/${l}`]),
+  );
+
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL(SITE.url),
+    title,
+    description,
+    alternates: {
+      canonical: `${SITE.url}/${locale}`,
+      languages: {
+        ...languages,
+        "x-default": `${SITE.url}/${routing.defaultLocale}`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      siteName: "MOAVO Habits",
+      title,
+      description,
+      url: `${SITE.url}/${locale}`,
+      locale: locale === "ko" ? "ko_KR" : "en_US",
+      images: [
+        {
+          url: `${SITE.url}/logo/logo-icon.png`,
+          width: 512,
+          height: 512,
+          alt: "MOAVO Habits",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${SITE.url}/logo/logo-icon.png`],
+    },
   };
 }
 
