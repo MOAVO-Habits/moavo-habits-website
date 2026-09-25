@@ -8,7 +8,9 @@
     "about": "About",
     "app": "App",
     "faq": "FAQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "FaqPage": {
     "headline": "Frequently Asked Questions",

@@ -98,3 +98,28 @@ html[lang="ko"] {
   --font-display: var(--font-pretendard), ui-sans-serif, system-ui, sans-serif;
   --font-accent: var(--font-pretendard), ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Korean: wrap at spaces, never mid-word (e.g. "만/들"). */
+html[lang="ko"] body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Mobile type scale — the desktop sizes (up to 56px) overflow narrow screens. */
+@media (max-width: 767px) {
+  :root {
+    --text-display1: 2.25rem;
+    --text-display2: 2.125rem;
+    --text-display3: 2rem;
+    --text-headline1: 2rem;
+    --text-headline2: 1.875rem;
+    --text-headline3: 1.75rem;
+    --text-title1: 1.75rem;
+    --text-title2: 1.625rem;
+    --text-title3: 1.5rem;
+    --text-subtitle1: 1.5rem;
+    --text-subtitle2: 1.375rem;
+    --text-subtitle3: 1.25rem;
+    --text-text1: 1.25rem;
+  }
+}
