@@ -12,6 +12,11 @@
     "menuOpen": "메뉴 열기",
     "menuClose": "메뉴 닫기"
   },
+  "Footer": {
+    "privacy": "개인정보처리방침",
+    "terms": "서비스이용약관",
+    "legalNavLabel": "약관 및 정책"
+  },
   "FaqPage": {
     "headline": "자주 묻는 질문",
     "categories": [

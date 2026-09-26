@@ -12,6 +12,11 @@
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
+  "Footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legalNavLabel": "Legal"
+  },
   "FaqPage": {
     "headline": "Frequently Asked Questions",
     "categories": [
