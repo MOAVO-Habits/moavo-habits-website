@@ -12,23 +12,44 @@ type PillarItem = {
   body: string;
 };
 
-// KO-only for now — screenshots live under /screenshots/ko/ and /screenshots/en/,
-// so this can become locale-aware once English placement is confirmed.
+// App-store screenshots per locale. Files live in /public/screenshots/{ko,en}/
+// and correspond 1:1 by number (1=system … 8=widget).
 const SCREENSHOTS = {
-  hero: "/screenshots/ko/1_시스템.png",
-  pillar1: "/screenshots/ko/2_정체성기반.png",
-  pillar2: [
-    "/screenshots/ko/4_AI러닝메이트.png",
-    "/screenshots/ko/5_AI분석리포트.png",
-    "/screenshots/ko/7_축하애니메이션.png",
-    "/screenshots/ko/8_AVO스마트위젯.png",
-  ],
-  pillar3: ["/screenshots/ko/3_히트맵성취감.png", "/screenshots/ko/6_통계.png"],
-};
+  ko: {
+    hero: "/screenshots/ko/1_시스템.png",
+    pillar1: "/screenshots/ko/2_정체성기반.png",
+    pillar2: [
+      "/screenshots/ko/4_AI러닝메이트.png",
+      "/screenshots/ko/5_AI분석리포트.png",
+      "/screenshots/ko/7_축하애니메이션.png",
+      "/screenshots/ko/8_AVO스마트위젯.png",
+    ],
+    pillar3: [
+      "/screenshots/ko/3_히트맵성취감.png",
+      "/screenshots/ko/6_통계.png",
+    ],
+  },
+  en: {
+    hero: "/screenshots/en/1_system.png",
+    pillar1: "/screenshots/en/2_identity-based.png",
+    pillar2: [
+      "/screenshots/en/4_AIrunning-mate.png",
+      "/screenshots/en/5_AIreport.png",
+      "/screenshots/en/7_delightful-UX.png",
+      "/screenshots/en/8_avo-smart-widget.png",
+    ],
+    pillar3: [
+      "/screenshots/en/3_hitmap-progress.png",
+      "/screenshots/en/6_statistic.png",
+    ],
+  },
+} as const;
 
 export default function AppPage() {
   const t = useTranslations("AppPage");
   const locale = useLocale();
+  const screenshots =
+    SCREENSHOTS[locale as keyof typeof SCREENSHOTS] ?? SCREENSHOTS.en;
 
   const pillar2Items = t.raw("pillar2.items") as PillarItem[];
   const pillar3Items = t.raw("pillar3.items") as PillarItem[];
@@ -61,7 +82,7 @@ export default function AppPage() {
             <div className="flex flex-1 items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={SCREENSHOTS.hero}
+                src={screenshots.hero}
                 alt="모아보해빗 앱 시스템 소개 화면"
                 className="w-full max-w-[16rem] rounded-3xl shadow-xl md:max-w-[19rem]"
               />
@@ -95,7 +116,7 @@ export default function AppPage() {
               <div className="flex flex-1 justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={SCREENSHOTS.pillar1}
+                  src={screenshots.pillar1}
                   alt={t("pillar1.headline")}
                   className="w-full max-w-[14rem] rounded-3xl shadow-xl md:max-w-[17rem]"
                 />
@@ -116,7 +137,7 @@ export default function AppPage() {
                   key={i}
                   subtitle={item.subtitle}
                   body={item.body}
-                  imageSrc={SCREENSHOTS.pillar2[i]}
+                  imageSrc={screenshots.pillar2[i]}
                   imageAlt={item.subtitle}
                   reverse={i % 2 === 1}
                 />
@@ -137,7 +158,7 @@ export default function AppPage() {
                   key={i}
                   subtitle={item.subtitle}
                   body={item.body}
-                  imageSrc={SCREENSHOTS.pillar3[i]}
+                  imageSrc={screenshots.pillar3[i]}
                   imageAlt={item.subtitle}
                   reverse={i % 2 === 1}
                 />
