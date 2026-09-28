@@ -4,6 +4,7 @@
 
 import { getStoreLinks } from "./storeLinks";
 import { getPricing } from "./pricing";
+import { SOCIAL_LINKS } from "./socialLinks";
 
 export const SITE = {
   url: "https://moavohabits.com",
@@ -33,6 +34,11 @@ export function organizationSchema() {
       url: SITE.logo,
     },
     founder: { "@id": `${SITE.url}/#founder` },
+    sameAs: [
+      SOCIAL_LINKS.instagram.url,
+      SOCIAL_LINKS.threads.url,
+      SOCIAL_LINKS.naverBlog.url,
+    ],
   };
 }
 
