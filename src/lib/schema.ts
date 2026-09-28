@@ -2,15 +2,14 @@
 // Keeping schema separate from page components makes the emitted markup easy
 // to audit and update as store links, pricing, or profiles change.
 
+import { getStoreLinks } from "./storeLinks";
+import { getPricing } from "./pricing";
+
 export const SITE = {
   url: "https://moavohabits.com",
   name: "MOAVO Habits",
   legalName: "MOAVO", // English brand/legal name
   logo: "https://moavohabits.com/logo/logo-icon.png",
-  appStoreUrl:
-    "https://apps.apple.com/kr/app/%EB%AA%A8%EC%95%84%EB%B3%B4%ED%95%B4%EB%B9%97-moavo-habits-ai-%EC%8A%B5%EA%B4%80-%EC%BD%94%EC%B9%AD/id6766134993",
-  googlePlayUrl:
-    "https://play.google.com/store/apps/details?id=com.moavohabits&pcampaignid=web_share",
 } as const;
 
 type Localized = {
@@ -88,6 +87,9 @@ export function softwareApplicationSchema({ locale }: Pick<Localized, "locale">)
       ? "매일의 작은 행동을 원하는 정체성으로 바꿔주는 AI 습관 코칭 앱. AI 코치 AVO가 실제 기록에 반응하는 코멘트와 행동분석 리포트를 제공한다."
       : "An AI-powered habit coaching app that turns small daily actions into the identity you want. AI coach AVO responds to your real records with comments and behavioral reports.";
 
+  const links = getStoreLinks(locale);
+  const pricing = getPricing(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -97,7 +99,7 @@ export function softwareApplicationSchema({ locale }: Pick<Localized, "locale">)
     applicationCategory: "HealthApplication",
     description,
     url: `${SITE.url}/${locale}/app`,
-    downloadUrl: [SITE.appStoreUrl, SITE.googlePlayUrl],
+    downloadUrl: [links.appStore, links.googlePlay],
     author: { "@id": `${SITE.url}/#organization` },
     // Free plan + subscription tiers.
     offers: [
@@ -105,19 +107,19 @@ export function softwareApplicationSchema({ locale }: Pick<Localized, "locale">)
         "@type": "Offer",
         name: locale === "ko" ? "무료 플랜" : "Free plan",
         price: "0",
-        priceCurrency: "KRW",
+        priceCurrency: pricing.currency,
       },
       {
         "@type": "Offer",
         name: locale === "ko" ? "월 구독" : "Monthly subscription",
-        price: "3000",
-        priceCurrency: "KRW",
+        price: pricing.monthly,
+        priceCurrency: pricing.currency,
       },
       {
         "@type": "Offer",
         name: locale === "ko" ? "연 구독" : "Annual subscription",
-        price: "30000",
-        priceCurrency: "KRW",
+        price: pricing.yearly,
+        priceCurrency: pricing.currency,
       },
     ],
   };
