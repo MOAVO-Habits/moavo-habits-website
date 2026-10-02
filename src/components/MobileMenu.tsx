@@ -5,7 +5,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import LocaleSwitcher from "./LocaleSwitcher";
 
 type MobileMenuProps = {
-  links: { href: string; label: string }[];
+  links: { href: string; label: string; external?: boolean }[];
   locale: string;
   openLabel: string;
   closeLabel: string;
@@ -59,12 +59,23 @@ export default function MobileMenu({
           <ul className="flex flex-col">
             {links.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="block py-3 text-text2 text-green-3 hover:text-green-2"
-                >
-                  {link.label}
-                </Link>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block py-3 text-text2 text-green-3 hover:text-green-2"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="block py-3 text-text2 text-green-3 hover:text-green-2"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

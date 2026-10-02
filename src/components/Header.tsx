@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { SOCIAL_LINKS } from "@/lib/socialLinks";
 import Logo from "./Logo";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileMenu from "./MobileMenu";
@@ -12,7 +13,9 @@ export default function Header({ locale }: { locale: string }) {
     { href: "/about", label: t("about") },
     { href: "/app", label: t("app") },
     { href: "/faq", label: t("faq") },
-    { href: "/blog", label: t("blog") },
+    locale === "ko"
+      ? { href: SOCIAL_LINKS.naverBlog.url, label: t("blog"), external: true }
+      : { href: "/blog", label: t("blog"), external: false },
   ];
 
   return (
@@ -22,15 +25,27 @@ export default function Header({ locale }: { locale: string }) {
           <Logo />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold whitespace-nowrap text-green-3 hover:text-green-2"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold whitespace-nowrap text-green-3 hover:text-green-2"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-semibold whitespace-nowrap text-green-3 hover:text-green-2"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
           <LocaleSwitcher current={locale} />
         </nav>
         <MobileMenu

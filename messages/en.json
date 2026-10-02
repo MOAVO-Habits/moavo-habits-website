@@ -17,6 +17,11 @@
     "terms": "Terms of Service",
     "legalNavLabel": "Legal"
   },
+  "BlogPage": {
+    "headline": "Our blog is coming soon",
+    "body": "We're working on it. Follow us on Instagram for updates.",
+    "instagramCta": "Follow on Instagram"
+  },
   "FaqPage": {
     "headline": "Frequently Asked Questions",
     "categories": [
