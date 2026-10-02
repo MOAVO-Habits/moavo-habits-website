@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "MOAVO Habits",
-    "description": "Build better habits, one day at a time."
+    "description": "Systems build habits, not willpower. MOAVO Habits is an AI habit coaching app that turns your small daily dots into the future you want."
   },
   "Nav": {
     "home": "Home",
@@ -111,7 +111,8 @@
       "headline": "Environment and systems build habits,\nnot willpower",
       "body": "If your plans were always perfect but you couldn't get past day three, it wasn't because your willpower was weak.\n\nIt was because you never had a system to build the habit.\n\nMOAVO Habits is a habit coaching app that stays with you every day, built on behavioral science and AI coaching.",
       "ctaAppStore": "Download on App Store",
-      "ctaGooglePlay": "Get it on Google Play"
+      "ctaGooglePlay": "Get it on Google Play",
+      "imageAlt": "MOAVO Habits app system overview screen"
     },
     "pillar1": {
       "headline": "Build habits in 3 steps, starting with who you want to become",
@@ -246,6 +247,18 @@
       "subtext": "Just start now. Just one habit is enough.",
       "ctaAppStore": "Download on App Store",
       "ctaGooglePlay": "Get it on Google Play"
+    },
+    "imageAlts": {
+          "sad": "Sad avocado character",
+          "waiting": "Avocado character waiting",
+          "tiredWaiting": "Tired, worn-out avocado character",
+          "solutionScreen": "MOAVO Habits app screen for logging a habit",
+          "calm": "Calm, peaceful avocado character",
+          "joy": "Happy avocado character",
+          "delighted": "Delighted avocado character with a big smile",
+          "surprised": "Surprised avocado character",
+          "exhausted": "Exhausted, frozen avocado character",
+          "coffee": "Avocado character taking a coffee break"
     }
   }
 }

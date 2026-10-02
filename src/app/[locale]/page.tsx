@@ -22,19 +22,19 @@ export default function HomePage() {
 
   // AVO character stills — see public/characters/ for the full emotion set.
   const featureIcons = [
-    { src: "/characters/감정1-평온(초록).png", w: 129, h: 143 },
-    { src: "/characters/감정8-기쁨(초록).png", w: 123, h: 179 },
-    { src: "/characters/감정9-매우기쁨(초록).png", w: 147, h: 185 },
-    { src: "/characters/감정7-놀람(초록).png", w: 113, h: 150 },
+    { src: "/characters/감정1-평온(초록).png", w: 129, h: 143, alt: t("imageAlts.calm") },
+    { src: "/characters/감정8-기쁨(초록).png", w: 123, h: 179, alt: t("imageAlts.joy") },
+    { src: "/characters/감정9-매우기쁨(초록).png", w: 147, h: 185, alt: t("imageAlts.delighted") },
+    { src: "/characters/감정7-놀람(초록).png", w: 113, h: 150, alt: t("imageAlts.surprised") },
   ];
   const audienceIcons = [
-    { src: "/characters/감정13-얼어죽기-직전(1).png", w: 162, h: 134 },
-    { src: "/characters/노랑-커피.png", w: 266, h: 243 },
+    { src: "/characters/감정13-얼어죽기-직전(1).png", w: 162, h: 134, alt: t("imageAlts.exhausted") },
+    { src: "/characters/노랑-커피.png", w: 266, h: 243, alt: t("imageAlts.coffee") },
   ];
   const pointIcons = [
-    { src: "/characters/감정5-슬픔(노랑).png", w: 121, h: 118 },
-    { src: "/characters/감정2-기다림(초록).png", w: 142, h: 103 },
-    { src: "/characters/감정3-기다리다-지침(초록).png", w: 111, h: 155 },
+    { src: "/characters/감정5-슬픔(노랑).png", w: 121, h: 118, alt: t("imageAlts.sad") },
+    { src: "/characters/감정2-기다림(초록).png", w: 142, h: 103, alt: t("imageAlts.waiting") },
+    { src: "/characters/감정3-기다리다-지침(초록).png", w: 111, h: 155, alt: t("imageAlts.tiredWaiting") },
   ];
 
   const problemParagraphs = t("problem.body").split("\n\n");
@@ -97,7 +97,7 @@ export default function HomePage() {
                 >
                   <Image
                     src={pointIcons[i].src}
-                    alt=""
+                    alt={pointIcons[i].alt}
                     width={pointIcons[i].w}
                     height={pointIcons[i].h}
                     className="mx-auto h-14 w-auto"
@@ -122,7 +122,7 @@ export default function HomePage() {
               <div className="mt-12 flex justify-center">
                 <Image
                   src="/characters/온보딩2.png"
-                  alt="습관을 기록하는 모아보해빗 앱 화면"
+                  alt={t("imageAlts.solutionScreen")}
                   width={257}
                   height={249}
                   className="h-[9.6rem] w-auto rounded-2xl sm:h-[12rem]"
@@ -171,7 +171,7 @@ export default function HomePage() {
                   <div className="flex h-24 items-end">
                     <Image
                       src={featureIcons[i].src}
-                      alt=""
+                      alt={featureIcons[i].alt}
                       width={featureIcons[i].w}
                       height={featureIcons[i].h}
                       className={`w-auto shrink-0 object-contain ${
@@ -205,7 +205,7 @@ export default function HomePage() {
                 >
                   <Image
                     src={audienceIcons[i].src}
-                    alt=""
+                    alt={audienceIcons[i].alt}
                     width={audienceIcons[i].w}
                     height={audienceIcons[i].h}
                     className="h-20 w-auto"

@@ -83,7 +83,7 @@ export default function AppPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={screenshots.hero}
-                alt="모아보해빗 앱 시스템 소개 화면"
+                alt={t("hero.imageAlt")}
                 className="w-full max-w-[16rem] rounded-3xl shadow-xl md:max-w-[19rem]"
               />
             </div>
