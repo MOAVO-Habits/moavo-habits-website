@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script"; // ★ 추가
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -9,6 +10,8 @@ import { pretendard, lobster, plaster } from "@/fonts";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema, webSiteSchema, SITE } from "@/lib/schema";
 import "../globals.css";
+
+const GA_ID = "G-HSK22G9S6M"; // ★ 추가
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -97,6 +100,20 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+
+        {/* ★ 추가: Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
