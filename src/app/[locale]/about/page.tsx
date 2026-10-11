@@ -54,6 +54,9 @@ export default function AboutPage() {
               text={t("moavo.slogan")}
               className="mx-auto mt-16 max-w-xl border-l-4 border-banana pl-4 text-left font-display text-subtitle2 text-banana"
             />
+            <p className="mx-auto mt-4 max-w-xl pl-5 text-left text-sm font-semibold leading-normal text-pure-white/60">
+              {t("moavo.research")}
+            </p>
           </div>
         </section>
 

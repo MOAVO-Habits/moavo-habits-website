@@ -15,7 +15,8 @@
   "Footer": {
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "legalNavLabel": "Legal"
+    "legalNavLabel": "Legal",
+    "research": "MOAVO Habits studies behavioral science and habit systems."
   },
   "BlogPage": {
     "headline": "Our blog is coming soon",
@@ -30,11 +31,11 @@
         "items": [
           {
             "q": "What is MOAVO Habits?",
-            "a": "MOAVO Habits is an AI-powered habit coaching app built around one question: who do you want to become? It goes beyond simply logging habits. Every day, AI coaching gives you encouragement and feedback on your actions, and your logged habits are turned into data that reveals your behavior patterns — so your habits become sustainable and you grow into the identity you're aiming for."
+            "a": "MOAVO Habits is an AI habit journal that lets you record your habits like a short journal. One line is enough, and every day AI coach AVO replies with encouragement and feedback, so keeping a habit journal feels enjoyable and never lonely. Built on behavioral science, MOAVO Habits turns your accumulated entries into data you can reflect on, helping you move closer to who you want to become."
           },
           {
             "q": "How is MOAVO Habits different from a regular habit tracker?",
-            "a": "A typical habit tracker just checks whether you completed something. MOAVO Habits is designed as a habit running mate. Every time you log — with a quick note or a photo — AI coach AVO responds to your real behavior patterns with genuine comments and builds reports for you. It goes beyond leaving a checkmark: it cheers on your consistency and keeps you from giving up."
+            "a": "A typical habit tracker only checks whether you finished. MOAVO Habits lets you record each habit like a short journal entry. Every time you leave a quick note or a photo, AI coach AVO sends a comment that responds to what you actually recorded, and builds behavior-pattern reports from your accumulated entries. It goes beyond a simple checklist: it cheers on your consistency and guides you all the way, so you don't give up."
           },
           {
             "q": "Who made MOAVO Habits?",
@@ -64,7 +65,7 @@
         "items": [
           {
             "q": "Who is MOAVO Habits for?",
-            "a": "MOAVO Habits was made for people who've given up on habits after a few days and blamed themselves, people who tried routines like a miracle morning alone and burned out, and anyone who needs consistency in exercise, studying, reading, saving, and more."
+            "a": "MOAVO Habits is made for people who want habits and routines but found plain habit trackers didn't fit, and for people who want to journal but find long entries a burden. It also suits anyone who gave up on habits after a few days and blamed themselves, tried a routine like a miracle morning alone and burned out, or needs consistency in exercise, studying, reading, or saving."
           },
           {
             "q": "Why is MOAVO Habits good for people who've repeatedly failed at building habits?",
@@ -96,7 +97,8 @@
       "headline": "MOAVO Habits started from one belief:\n\nhabits are built through systems, not willpower.",
       "body": "Most people don't fail at habits because they're lazy. They fail because they haven't had a system simple enough to use even after a hard day. MOAVO Habits is that simple system.\n\nOne daily log, one dot, and a gentle nudge every day from your AI running mate, AVO.",
       "belief": "We believe that even the smallest action can change you when you give it your care and attention. Change brings small wins. Over time, those wins build the momentum to take you further than you imagined.",
-      "slogan": "Small actions. Small wins. Real momentum."
+      "slogan": "Small actions. Small wins. Real momentum.",
+      "research": "MOAVO Habits studies behavioral science and habit systems."
     },
     "founder": {
       "headline": "Architect of MOAVO Habits\n\nJAE Dokgo\nBehavior System Designer",
@@ -160,18 +162,13 @@
     "audience": {
       "headline": "We built this for people like you",
       "items": [
+        "Anyone who wants habits and routines, but found plain habit trackers didn't fit",
+        "Anyone who wants to journal, but finds long entries a burden",
         "Anyone who's blamed themselves after quitting on day three",
-        "Anyone who tried a miracle morning but found it hard alone",
+        "Anyone who tried a miracle morning or a productive-life challenge but found it hard alone",
         "Anyone who needs consistency in exercise, study, reading, or saving",
-        "Burned-out professionals",
-        "Job seekers worn down by the search",
-        "Small business owners hitting a revenue cliff",
-        "Athletes who are unknown but refuse to give up",
-        "Artists holding on toward their dream",
-        "Test-takers who've sat at the same desk for years",
-        "Women returning after a career break, trying to find themselves again",
-        "Founders starting over after failure",
-        "People beginning rehab after their health declined"
+        "Anyone who wants to get to know themselves through what they record",
+        "Anyone who wants to grow by seeing their own actions as data"
       ]
     },
     "pricing": {
@@ -190,8 +187,9 @@
   },
   "HomePage": {
     "hero": {
-      "headline": "One dot, one habit.",
-      "subheadline": "Systems build habits, not willpower.\nToday's small dot builds the future you want.",
+      "headline": "One habit.\nYour\u00a0own AI\u00a0habit\u00a0journal.",
+      "subheadline": "You don't have to rely on willpower anymore. Turn small goals into habits, record them like a simple journal, and life changes little by little.",
+      "support": "Write one line, and AI coach AVO replies with encouragement and feedback.",
       "ctaAppStore": "Download on App Store",
       "ctaGooglePlay": "Get it on Google Play"
     },
@@ -206,7 +204,8 @@
     },
     "solution": {
       "headline": "MOAVO Habits is here for the future you're building",
-      "body": "MOAVO Habits is more than a habit tracker. It's a proactive habit-building system grounded in behavioral science.\n\nLog a habit, and you begin to see your actions as data. Analyze that data, and behavior patterns emerge. See your patterns, and confidence grows. And your confidence helps you change.\n\nDay by day, small actions build momentum toward the future you want.",
+      "body": "MOAVO Habits is more than a habit tracker. It's an AI habit journal grounded in behavioral science.\n\nLog a habit, and you begin to see your actions as data. Analyze that data, and behavior patterns emerge. See your patterns, and confidence grows. And your confidence helps you change.\n\nDay by day, small actions build momentum toward the future you want.",
+      "support": "Write just one line, and AI coach AVO replies with encouragement and feedback.",
       "positioning": "MOAVO Habits notices every step you take to get there — every dot along the way."
     },
     "features": {
@@ -214,7 +213,7 @@
       "items": [
         {
           "title": "Easy daily logging",
-          "description": "Simple, flexible, and easy to make your own"
+          "description": "A one-line habit journal — easy, simple, and free-form"
         },
         {
           "title": "See your progress",
@@ -234,12 +233,12 @@
       "headline": "Who it's for",
       "items": [
         {
-          "title": "For those who feel something needs to change",
-          "description": "For anyone who feels unseen and unsupported, but hasn't given up hope."
+          "title": "For those who found plain habit trackers didn't fit",
+          "description": "You want habits and routines, but trackers that simply check a box and move on felt cold. MOAVO Habits lets you jot down your day like a short journal, then look back on your accumulated entries as data about yourself."
         },
         {
-          "title": "For those whose potential is still taking shape",
-          "description": "People who might not see the results right now, but know their momentum will come as long as they stay consistent. MOAVO Habits is a system that helps you keep going through this difficult stretch."
+          "title": "For those who find long journal entries a burden",
+          "description": "You want to keep a journal, but long entries feel like too much? One line is enough. Jot down what you did today and how it felt, and AI coach AVO replies with encouragement and feedback, so you never feel alone."
         }
       ]
     },

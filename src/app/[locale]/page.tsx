@@ -49,11 +49,14 @@ export default function HomePage() {
         <section className="bg-green-1">
           <div className="mx-auto flex max-w-6xl flex-col-reverse items-center gap-12 px-6 py-20 md:flex-row md:py-28">
             <div className="flex flex-1 flex-col items-start gap-6 text-left">
-              <h1 className="text-display3 text-green-3 md:text-display1">
+              <h1 className="text-display3 whitespace-pre-line text-green-3 md:text-[2.625rem] lg:text-display1">
                 {t("hero.headline")}
               </h1>
-              <p className="max-w-md text-text5 text-green-2">
+              <p className="max-w-md text-balance text-text5 text-green-2">
                 {t("hero.subheadline")}
+              </p>
+              <p className="max-w-md text-balance text-sm font-semibold leading-normal text-green-3/70">
+                {t("hero.support")}
               </p>
               <StoreButtons
                 appStoreLabel={t("hero.ctaAppStore")}
@@ -119,6 +122,9 @@ export default function HomePage() {
             />
             <div className="mx-auto mt-6 max-w-2xl space-y-6 text-text5 text-green-1/90">
               <p className="whitespace-pre-line">{solutionParagraphs[0]}</p>
+              <p className="text-balance text-sm font-semibold leading-normal text-green-1/70">
+                {t("solution.support")}
+              </p>
               <div className="mt-12 flex justify-center">
                 <Image
                   src="/characters/온보딩2.png"
