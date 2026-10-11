@@ -21,13 +21,19 @@ type Localized = {
 // ---------------------------------------------------------------------------
 // Organization — emitted site-wide from the root layout.
 // ---------------------------------------------------------------------------
-export function organizationSchema() {
+export function organizationSchema({ locale }: Pick<Localized, "locale">) {
+  const description =
+    locale === "ko"
+      ? "모아보해빗은 AI 습관 일기 앱을 만들고, 행동과학과 습관 시스템을 연구합니다."
+      : "MOAVO Habits makes an AI habit journal app and studies behavioral science and habit systems.";
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${SITE.url}/#organization`,
     name: SITE.legalName,
     alternateName: "MOAVO Habits",
+    description,
     url: SITE.url,
     logo: {
       "@type": "ImageObject",
@@ -90,8 +96,8 @@ export function personSchema({ locale }: Pick<Localized, "locale">) {
 export function softwareApplicationSchema({ locale }: Pick<Localized, "locale">) {
   const description =
     locale === "ko"
-      ? "매일의 작은 행동을 원하는 정체성으로 바꿔주는 AI 습관 코칭 앱. AI 코치 AVO가 실제 기록에 반응하는 코멘트와 행동분석 리포트를 제공한다."
-      : "An AI-powered habit coaching app that turns small daily actions into the identity you want. AI coach AVO responds to your real records with comments and behavioral reports.";
+      ? "한 줄을 쓰면 AI 코치 AVO가 응원과 피드백으로 답해 주는 AI 습관 일기 앱. 기록은 행동 패턴을 보여주는 데이터가 됩니다."
+      : "An AI habit journal app. Write one line and AI coach AVO replies with encouragement and feedback; your entries become data that reveals your behavior patterns.";
 
   const links = getStoreLinks(locale);
   const pricing = getPricing(locale);

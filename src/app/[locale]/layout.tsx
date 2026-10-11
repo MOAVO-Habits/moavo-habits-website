@@ -96,7 +96,7 @@ export default async function LocaleLayout({
       className={`${pretendard.variable} ${lobster.variable} ${plaster.variable}`}
     >
       <body className="min-h-screen bg-pure-white font-sans text-rich-black antialiased">
-        <JsonLd data={[organizationSchema(), webSiteSchema()]} />
+        <JsonLd data={[organizationSchema({ locale }), webSiteSchema()]} />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

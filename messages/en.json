@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "MOAVO Habits",
-    "description": "Systems build habits, not willpower. MOAVO Habits is an AI habit coaching app that turns your small daily dots into the future you want."
+    "description": "Your own AI habit journal. Write one line, and AI coach AVO replies with encouragement and feedback. MOAVO Habits studies behavioral science and habit systems."
   },
   "Nav": {
     "home": "Home",
@@ -116,7 +116,7 @@
   "AppPage": {
     "hero": {
       "headline": "Environment and systems build habits,\nnot willpower",
-      "body": "If your plans were always perfect but you couldn't get past day three, it wasn't because your willpower was weak.\n\nIt was because you never had a system to build the habit.\n\nMOAVO Habits is a habit coaching app that stays with you every day, built on behavioral science and AI coaching.",
+      "body": "If your plans were always perfect but you couldn't get past day three, it wasn't because your willpower was weak.\n\nIt was because you never had a system to build the habit.\n\nMOAVO Habits is an AI habit journal built on behavioral science, where AI coach AVO replies to your one-line entries every day.",
       "ctaAppStore": "Download on App Store",
       "ctaGooglePlay": "Get it on Google Play",
       "imageAlt": "MOAVO Habits app system overview screen"
