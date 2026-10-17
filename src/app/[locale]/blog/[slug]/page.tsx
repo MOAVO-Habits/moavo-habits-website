@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getTranslations } from "next-intl/server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ import {
   type BlogPost,
 } from "@/lib/blog";
 import { categoryName } from "@/lib/blogCategories";
+import { versionedSrc } from "@/lib/blogImages";
 import {
   DEFAULT_SOCIAL_IMAGE,
   OG_LOCALE,
@@ -177,7 +179,7 @@ export default async function BlogPostPage({ params }: Props) {
           {post.cover && (
             <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl bg-green-1">
               <Image
-                src={post.cover}
+                src={versionedSrc(post.cover)}
                 alt={post.coverAlt ?? post.title}
                 fill
                 priority
@@ -188,7 +190,17 @@ export default async function BlogPostPage({ params }: Props) {
           )}
 
           <div className="mt-10 text-[1.0625rem] leading-8 font-medium break-words text-green-3/90">
-            <MDXRemote source={post.body} components={mdxComponents} />
+            <MDXRemote
+              source={post.body}
+              components={mdxComponents}
+              options={{
+                mdxOptions: {
+                  // GFM tables, task lists, autolinks. singleTilde off: a lone ~
+                  // ("3~4km") must not turn into strikethrough.
+                  remarkPlugins: [[remarkGfm, { singleTilde: false }]],
+                },
+              }}
+            />
           </div>
         </article>
 

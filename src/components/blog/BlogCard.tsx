@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { categoryName } from "@/lib/blogCategories";
 import { formatDate, type BlogPost } from "@/lib/blog";
+import { versionedSrc } from "@/lib/blogImages";
 
 // Thumbnail, or a brand-colour placeholder when the post has no cover.
 function Thumb({
@@ -17,7 +18,7 @@ function Thumb({
     <div className={`relative overflow-hidden bg-green-1 ${className}`}>
       {post.cover ? (
         <Image
-          src={post.cover}
+          src={versionedSrc(post.cover)}
           alt={post.coverAlt ?? post.title}
           fill
           sizes={sizes}

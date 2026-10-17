@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ComponentProps } from "react";
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import { Link } from "@/i18n/navigation";
+import { versionedSrc } from "@/lib/blogImages";
 
 // Element styling for MDX article bodies, built from the site's colour/type
 // tokens (no @tailwindcss/typography). Authors write plain Markdown; headings
@@ -43,9 +44,15 @@ function Anchor({ href = "", children, ...rest }: ComponentProps<"a">) {
 }
 
 function Img({ src, alt }: ComponentProps<"img">) {
-  if (typeof src !== "string" || !alt || alt.trim() === "") {
-    throw new Error(
-      `[blog] Every image needs alt text: ![describe the image](${String(src)})`,
+  if (typeof src !== "string") {
+    throw new Error("[blog] Image is missing a src");
+  }
+  // A missing alt must not break the deploy (posts are written in the admin UI):
+  // render an empty alt and warn while developing.
+  const text = alt?.trim() ?? "";
+  if (text === "" && process.env.NODE_ENV !== "production") {
+    console.warn(
+      `[blog] Image has no alt text: ![describe the image](${src}) — rendering alt=""`,
     );
   }
   if (!src.startsWith("/")) {
@@ -55,8 +62,8 @@ function Img({ src, alt }: ComponentProps<"img">) {
   }
   return (
     <Image
-      src={src}
-      alt={alt}
+      src={versionedSrc(src)}
+      alt={text}
       width={0}
       height={0}
       sizes="(min-width: 768px) 768px, 100vw"
@@ -107,6 +114,33 @@ export const mdxComponents: MdxComponents = {
     />
   ),
   hr: () => <hr className="my-12 border-gray-2" />,
+  // GFM tables (remark-gfm). The wrapper scrolls sideways when a table is
+  // wider than the column, so the page itself never overflows at 320px.
+  table: (props) => (
+    <div className="my-8 overflow-x-auto rounded-xl border border-gray-2">
+      <table
+        {...props}
+        className="w-full border-collapse text-left text-sm leading-normal"
+      />
+    </div>
+  ),
+  thead: (props) => <thead {...props} className="bg-green-1" />,
+  tbody: (props) => <tbody {...props} />,
+  tr: (props) => (
+    <tr {...props} className="border-t border-gray-2 first:border-t-0" />
+  ),
+  th: (props) => (
+    <th
+      {...props}
+      className="px-4 py-3 align-top font-semibold break-words text-green-3"
+    />
+  ),
+  td: (props) => (
+    <td
+      {...props}
+      className="px-4 py-3 align-top font-medium break-words text-green-3/90"
+    />
+  ),
   code: (props) => (
     <code
       {...props}
