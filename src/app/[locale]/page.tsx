@@ -5,6 +5,16 @@ import Footer from "@/components/Footer";
 import LottiePlayer from "@/components/LottiePlayer";
 import MultilineText from "@/components/MultilineText";
 import StoreButtons from "@/components/StoreButtons";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "home");
+}
 
 export default function HomePage() {
   const t = useTranslations("HomePage");

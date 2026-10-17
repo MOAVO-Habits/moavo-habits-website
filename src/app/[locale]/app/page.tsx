@@ -6,6 +6,7 @@ import StoreButtons from "@/components/StoreButtons";
 import FeatureRow from "@/components/FeatureRow";
 import JsonLd from "@/components/JsonLd";
 import { softwareApplicationSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 type PillarItem = {
   subtitle: string;
@@ -44,6 +45,15 @@ const SCREENSHOTS = {
     ],
   },
 } as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "app");
+}
 
 export default function AppPage() {
   const t = useTranslations("AppPage");

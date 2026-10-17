@@ -1,7 +1,23 @@
 {
   "Metadata": {
     "title": "MOAVO Habits",
-    "description": "Your own AI habit journal. Write one line, and AI coach AVO replies with encouragement and feedback. MOAVO Habits studies behavioral science and habit systems."
+    "description": "Your own AI habit journal. Write one line, and AI coach AVO replies with encouragement and feedback. MOAVO Habits studies behavioral science and habit systems.",
+    "home": {
+      "title": "MOAVO Habits | Your Own AI Habit Journal",
+      "description": "Your own AI habit journal. Write one line, and AI coach AVO replies with encouragement and feedback. MOAVO Habits studies behavioral science and habit systems."
+    },
+    "about": {
+      "title": "About MOAVO Habits | Behavioral Science & Habit Systems",
+      "description": "MOAVO Habits started from one belief: habits are built through systems, not willpower. Meet the founder, JAE Dokgo, a behavior system designer."
+    },
+    "app": {
+      "title": "MOAVO Habits App | AI Habit Journal with Coach AVO",
+      "description": "Write one line a day and AI coach AVO replies with encouragement and feedback. Heatmaps, AI behavior reports, and a home-screen widget keep you going."
+    },
+    "faq": {
+      "title": "FAQ | MOAVO Habits",
+      "description": "Answers about MOAVO Habits: how the AI habit journal works, who it is for, AI coach AVO, pricing, the free plan, and refunds."
+    }
   },
   "Nav": {
     "home": "Home",

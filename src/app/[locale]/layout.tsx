@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import { pretendard, lobster, plaster } from "@/fonts";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema, webSiteSchema, SITE } from "@/lib/schema";
+import { openGraphBase } from "@/lib/seo";
 import "../globals.css";
 
 const GA_ID = "G-HSK22G9S6M"; // ★ 추가
@@ -28,39 +29,14 @@ export async function generateMetadata({
   const title = t("title");
   const description = t("description");
 
-  // Per-locale canonical + hreflang alternates so Google treats /en and /ko
-  // as language variants of one page rather than duplicate content.
-  const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, `${SITE.url}/${l}`]),
-  );
-
+  // No canonical / hreflang / og:url here: they would be inherited by every
+  // page. Each page sets its own (see pageMetadata in lib/seo.ts, and the
+  // blog routes).
   return {
     metadataBase: new URL(SITE.url),
     title,
     description,
-    alternates: {
-      canonical: `${SITE.url}/${locale}`,
-      languages: {
-        ...languages,
-        "x-default": `${SITE.url}/${routing.defaultLocale}`,
-      },
-    },
-    openGraph: {
-      type: "website",
-      siteName: "MOAVO Habits",
-      title,
-      description,
-      url: `${SITE.url}/${locale}`,
-      locale: locale === "ko" ? "ko_KR" : "en_US",
-      images: [
-        {
-          url: `${SITE.url}/logo/logo-icon.png`,
-          width: 512,
-          height: 512,
-          alt: "MOAVO Habits",
-        },
-      ],
-    },
+    openGraph: openGraphBase({ locale, title, description }),
     twitter: {
       card: "summary_large_image",
       title,

@@ -6,6 +6,16 @@ import MultilineText from "@/components/MultilineText";
 import StoreButtons from "@/components/StoreButtons";
 import JsonLd from "@/components/JsonLd";
 import { personSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "about");
+}
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");

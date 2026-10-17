@@ -4,11 +4,21 @@ import Footer from "@/components/Footer";
 import Accordion from "@/components/Accordion";
 import JsonLd from "@/components/JsonLd";
 import { faqPageSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 type Category = {
   title: string;
   items: { q: string; a: string }[];
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "faq");
+}
 
 export default function FaqPage() {
   const t = useTranslations("FaqPage");
