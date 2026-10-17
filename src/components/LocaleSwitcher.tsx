@@ -3,7 +3,14 @@
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
-export default function LocaleSwitcher({ current }: { current: string }) {
+export default function LocaleSwitcher({
+  current,
+  hrefs,
+}: {
+  current: string;
+  // Per-locale pathname overrides for pages that don't exist in every language.
+  hrefs?: Record<string, string>;
+}) {
   const pathname = usePathname();
 
   return (
@@ -12,7 +19,7 @@ export default function LocaleSwitcher({ current }: { current: string }) {
         <span key={locale} className="flex items-center gap-1">
           {i > 0 && <span className="text-gray-3">/</span>}
           <Link
-            href={pathname}
+            href={hrefs?.[locale] ?? pathname}
             locale={locale}
             className={
               locale === current

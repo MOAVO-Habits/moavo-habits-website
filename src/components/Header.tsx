@@ -1,21 +1,25 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { SOCIAL_LINKS } from "@/lib/socialLinks";
 import Logo from "./Logo";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileMenu from "./MobileMenu";
 
-export default function Header({ locale }: { locale: string }) {
+type HeaderProps = {
+  locale: string;
+  // Where the EN/KO switcher should go when the same path doesn't exist in the
+  // other language (e.g. a blog post). Keys are locales, values are pathnames.
+  localeHrefs?: Record<string, string>;
+};
+
+export default function Header({ locale, localeHrefs }: HeaderProps) {
   const t = useTranslations("Nav");
 
-  const links = [
+  const links: { href: string; label: string; external?: boolean }[] = [
     { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
     { href: "/app", label: t("app") },
     { href: "/faq", label: t("faq") },
-    locale === "ko"
-      ? { href: SOCIAL_LINKS.naverBlog.url, label: t("blog"), external: true }
-      : { href: "/blog", label: t("blog"), external: false },
+    { href: "/blog", label: t("blog") },
   ];
 
   return (
@@ -46,11 +50,12 @@ export default function Header({ locale }: { locale: string }) {
               </Link>
             ),
           )}
-          <LocaleSwitcher current={locale} />
+          <LocaleSwitcher current={locale} hrefs={localeHrefs} />
         </nav>
         <MobileMenu
           links={links}
           locale={locale}
+          localeHrefs={localeHrefs}
           openLabel={t("menuOpen")}
           closeLabel={t("menuClose")}
         />

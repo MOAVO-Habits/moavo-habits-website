@@ -7,6 +7,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 type MobileMenuProps = {
   links: { href: string; label: string; external?: boolean }[];
   locale: string;
+  localeHrefs?: Record<string, string>;
   openLabel: string;
   closeLabel: string;
 };
@@ -14,6 +15,7 @@ type MobileMenuProps = {
 export default function MobileMenu({
   links,
   locale,
+  localeHrefs,
   openLabel,
   closeLabel,
 }: MobileMenuProps) {
@@ -80,7 +82,7 @@ export default function MobileMenu({
             ))}
           </ul>
           <div className="mt-2 border-t border-gray-2 pt-4">
-            <LocaleSwitcher current={locale} />
+            <LocaleSwitcher current={locale} hrefs={localeHrefs} />
           </div>
         </nav>
       )}

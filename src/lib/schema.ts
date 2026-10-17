@@ -161,3 +161,78 @@ export function faqPageSchema(categories: FaqCategory[]) {
     })),
   };
 }
+
+// ---------------------------------------------------------------------------
+// Blog — list pages (Blog) and posts (BlogPosting).
+// author/publisher reference the Person/Organization nodes by @id; post pages
+// also emit personSchema() so the founder @id resolves on the same page.
+// ---------------------------------------------------------------------------
+type BlogListItem = {
+  headline: string;
+  url: string;
+  datePublished: string;
+};
+
+export function blogSchema({
+  locale,
+  name,
+  description,
+  url,
+  posts,
+}: {
+  locale: string;
+  name: string;
+  description: string;
+  url: string;
+  posts: BlogListItem[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${SITE.url}/${locale}/blog#blog`,
+    name,
+    description,
+    url,
+    inLanguage: locale,
+    publisher: { "@id": `${SITE.url}/#organization` },
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.headline,
+      url: p.url,
+      datePublished: p.datePublished,
+    })),
+  };
+}
+
+export function blogPostingSchema({
+  locale,
+  url,
+  headline,
+  description,
+  datePublished,
+  dateModified,
+  image,
+}: {
+  locale: string;
+  url: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#post`,
+    headline,
+    description,
+    datePublished,
+    dateModified,
+    inLanguage: locale,
+    ...(image ? { image } : {}),
+    author: { "@id": `${SITE.url}/#founder` },
+    publisher: { "@id": `${SITE.url}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  };
+}

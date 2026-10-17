@@ -35,9 +35,25 @@
     "research": "MOAVO Habits studies behavioral science and habit systems."
   },
   "BlogPage": {
-    "headline": "Our blog is coming soon",
-    "body": "We're working on it. Follow us on Instagram for updates.",
-    "instagramCta": "Follow on Instagram"
+    "headline": "MOAVO Habits Blog",
+    "intro": "Notes on behavioral science, habit systems, and the AI habit journal.",
+    "metaDescription": "Articles from MOAVO Habits on behavioral science, habit systems, and the AI habit journal.",
+    "empty": "No posts yet. Our first article is coming soon.",
+    "allCategories": "All",
+    "categoryNavLabel": "Categories",
+    "featured": "Featured",
+    "minutes": "{count} min read",
+    "updatedOn": "Updated {date}",
+    "relatedTitle": "More in this category",
+    "installTitle": "An AI habit journal that starts with one line",
+    "installBody": "Write just one line, and AI coach AVO replies with encouragement and feedback. Get started with the MOAVO Habits app.",
+    "categoryMetaDescription": "Posts in {category}.",
+    "pageTitle": "Page {n}",
+    "paginationLabel": "Pagination",
+    "prev": "Previous",
+    "next": "Next",
+    "rss": "Subscribe via RSS",
+    "backToBlog": "Back to the blog"
   },
   "FaqPage": {
     "headline": "Frequently Asked Questions",
