@@ -189,7 +189,10 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
 
-          <div className="mt-10 text-[1.0625rem] leading-8 font-medium break-words text-green-3/90">
+          <div
+            data-blog-post-body
+            className="mt-10 text-[1.0625rem] leading-8 font-medium break-words text-green-3/90"
+          >
             <MDXRemote
               source={post.body}
               components={mdxComponents}
@@ -205,7 +208,10 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
 
         <section className="px-6 pb-16">
-          <div className="mx-auto max-w-3xl rounded-3xl bg-green-3 px-6 py-10 text-center md:px-10">
+          <div
+            data-blog-app-cta
+            className="mx-auto max-w-3xl rounded-3xl bg-green-3 px-6 py-10 text-center md:px-10"
+          >
             <h2 className="text-subtitle2 text-pure-white">
               {t("installTitle")}
             </h2>
@@ -219,6 +225,12 @@ export default async function BlogPostPage({ params }: Props) {
                 variant="light"
               />
             </div>
+            <Link
+              href="/app"
+              className="mt-5 inline-block text-sm font-semibold text-green-1/80 underline underline-offset-4 hover:text-pure-white"
+            >
+              {t("learnMoreApp")}
+            </Link>
           </div>
         </section>
 
