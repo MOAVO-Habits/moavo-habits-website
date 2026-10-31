@@ -9,7 +9,12 @@ import { routing } from "@/i18n/routing";
 import { pretendard, lobster, plaster } from "@/fonts";
 import JsonLd from "@/components/JsonLd";
 import AnalyticsClicks from "@/components/AnalyticsClicks";
-import { organizationSchema, webSiteSchema, SITE } from "@/lib/schema";
+import {
+  organizationSchema,
+  webSiteSchema,
+  founderSchema,
+  SITE,
+} from "@/lib/schema";
 import { openGraphBase } from "@/lib/seo";
 import "../globals.css";
 
@@ -73,7 +78,13 @@ export default async function LocaleLayout({
       className={`${pretendard.variable} ${lobster.variable} ${plaster.variable}`}
     >
       <body className="min-h-screen bg-pure-white font-sans text-rich-black antialiased">
-        <JsonLd data={[organizationSchema({ locale }), webSiteSchema()]} />
+        <JsonLd
+          data={[
+            organizationSchema({ locale }),
+            webSiteSchema(),
+            founderSchema(),
+          ]}
+        />
         <AnalyticsClicks locale={locale} />
         <NextIntlClientProvider messages={messages}>
           {children}

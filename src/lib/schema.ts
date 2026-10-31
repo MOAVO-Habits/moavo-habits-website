@@ -13,6 +13,11 @@ export const SITE = {
   logo: "https://moavohabits.com/logo/logo-icon.png",
 } as const;
 
+// Founder name as used in structured data. Both the site-wide founder node and
+// the fuller personSchema() use it, so the two nodes sharing the #founder @id
+// can never disagree. (On-page text is written separately in messages/.)
+const FOUNDER_NAME = "Jae Dokgo";
+
 type Localized = {
   locale: string;
   path: string; // pathname without domain, e.g. "/about" or "" for home
@@ -32,7 +37,7 @@ export function organizationSchema({ locale }: Pick<Localized, "locale">) {
     "@type": "Organization",
     "@id": `${SITE.url}/#organization`,
     name: SITE.legalName,
-    alternateName: "MOAVO Habits",
+    alternateName: ["MOAVO Habits", "모아보해빗"],
     description,
     url: SITE.url,
     logo: {
@@ -58,8 +63,25 @@ export function webSiteSchema() {
     "@id": `${SITE.url}/#website`,
     url: SITE.url,
     name: SITE.name,
+    alternateName: ["모아보해빗", "MOAVO"],
     publisher: { "@id": `${SITE.url}/#organization` },
     inLanguage: ["en", "ko"],
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Founder (minimal) — emitted site-wide next to Organization so that
+// Organization.founder (and BlogPosting.author) always resolve to a node on
+// the same page. The About page and blog posts additionally emit the fuller
+// personSchema() below under the same @id.
+// ---------------------------------------------------------------------------
+export function founderSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE.url}/#founder`,
+    name: FOUNDER_NAME,
+    worksFor: { "@id": `${SITE.url}/#organization` },
   };
 }
 
@@ -79,7 +101,7 @@ export function personSchema({ locale }: Pick<Localized, "locale">) {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${SITE.url}/#founder`,
-    name: "JAE Dokgo",
+    name: FOUNDER_NAME,
     legalName: "Jae-Young Dokgo",
     jobTitle,
     description,
