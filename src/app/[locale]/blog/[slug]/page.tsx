@@ -33,7 +33,7 @@ import { blogPostingSchema, personSchema, SITE } from "@/lib/schema";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-const AUTHOR = "JAE Dokgo";
+const AUTHOR = "Jae Dokgo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>

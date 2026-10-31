@@ -70,7 +70,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* About JAE Dokgo */}
+        {/* About Jae Dokgo */}
         <section className="bg-gray-1">
           <div className="mx-auto max-w-4xl px-6 py-32 md:py-40">
             <h2 className="text-center text-headline2 text-green-3">
