@@ -5,6 +5,7 @@
 import { getStoreLinks } from "./storeLinks";
 import { getPricing } from "./pricing";
 import { SOCIAL_LINKS } from "./socialLinks";
+import { COMPANY, companyLegalName } from "./company";
 
 export const SITE = {
   url: "https://moavohabits.com",
@@ -37,9 +38,21 @@ export function organizationSchema({ locale }: Pick<Localized, "locale">) {
     "@type": "Organization",
     "@id": `${SITE.url}/#organization`,
     name: SITE.legalName,
+    legalName: companyLegalName(locale),
     alternateName: ["MOAVO Habits", "모아보해빗"],
     description,
     url: SITE.url,
+    email: COMPANY.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: COMPANY.address.locality,
+      addressCountry: COMPANY.address.country,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: COMPANY.email,
+    },
     logo: {
       "@type": "ImageObject",
       url: SITE.logo,

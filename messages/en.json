@@ -32,7 +32,10 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "legalNavLabel": "Legal",
-    "research": "MOAVO Habits studies behavioral science and habit systems."
+    "research": "MOAVO Habits studies behavioral science and habit systems.",
+    "companyName": "MOAVO",
+    "businessNo": "Business Reg. No.",
+    "location": "Seoul, Korea"
   },
   "BlogPage": {
     "headline": "MOAVO Habits Blog",
@@ -138,6 +141,21 @@
       "body": "Before building this app, I spent years designing physical spaces — retail stores, restaurants, cafeterias, offices, even hospitals. The context was different every time, but the question was always the same:\n\nHow does the design of a space shape where people go, what they choose, and what they do?\n\nAnd that experience taught me one truth: people don't change by trying harder through willpower. They change when their environment is designed so that the right action becomes the easiest choice.",
       "connector": "MOAVO Habits applies that same principle to a smartphone screen instead of a floor plan.",
       "legalName": ""
+    },
+    "company": {
+      "headline": "Company",
+      "nameLabel": "Company name",
+      "nameValue": "MOAVO (모두의아보카도)",
+      "registrationLabel": "Business registration no.",
+      "locationLabel": "Location",
+      "locationValue": "Seoul, Republic of Korea",
+      "representativeLabel": "Representative",
+      "representativeValue": "Jae Dokgo"
+    },
+    "contact": {
+      "headline": "Contact",
+      "body": "For questions or feedback about the service, email us at the address below.",
+      "emailLabel": "Email"
     },
     "cta": {
       "headline": "Your story can start with one dot, too.",

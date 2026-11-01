@@ -6,6 +6,7 @@ import MultilineText from "@/components/MultilineText";
 import StoreButtons from "@/components/StoreButtons";
 import JsonLd from "@/components/JsonLd";
 import { personSchema } from "@/lib/schema";
+import { COMPANY } from "@/lib/company";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -24,6 +25,15 @@ export default function AboutPage() {
   const founderHeadlineBlocks = t("founder.headline").split("\n\n");
   const founderNameLines = founderHeadlineBlocks[1]?.split("\n") ?? [];
   const moavoHeadlineParts = t("moavo.headline").split("\n\n");
+
+  // Company facts: labels/values from messages, registration number from the
+  // shared COMPANY constants.
+  const companyRows: [string, string][] = [
+    [t("company.nameLabel"), t("company.nameValue")],
+    [t("company.registrationLabel"), COMPANY.businessRegistrationNo],
+    [t("company.locationLabel"), t("company.locationValue")],
+    [t("company.representativeLabel"), t("company.representativeValue")],
+  ];
 
   return (
     <>
@@ -95,6 +105,51 @@ export default function AboutPage() {
                 {t("founder.legalName")}
               </p>
             )}
+          </div>
+        </section>
+
+        {/* Company */}
+        <section className="bg-pure-white">
+          <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
+            <h2 className="text-center text-headline3 text-green-3">
+              {t("company.headline")}
+            </h2>
+            <dl className="mt-10 divide-y divide-gray-2 overflow-hidden rounded-2xl border border-gray-2">
+              {companyRows.map(([label, value]) => (
+                <div
+                  key={label}
+                  className="grid gap-1 px-5 py-4 sm:grid-cols-[11rem_1fr] sm:gap-6"
+                >
+                  <dt className="text-sm font-semibold text-green-3/70">
+                    {label}
+                  </dt>
+                  <dd className="text-text5 break-words text-green-3">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section className="bg-gray-1">
+          <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-24">
+            <h2 className="text-headline3 text-green-3">
+              {t("contact.headline")}
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-text5 text-gray-4">
+              {t("contact.body")}
+            </p>
+            <p className="mt-8 text-sm font-semibold text-green-3/70">
+              {t("contact.emailLabel")}
+            </p>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="mt-2 inline-block max-w-full rounded-full bg-green-3 px-6 py-3 text-text5 font-semibold break-all text-pure-white transition-colors hover:bg-green-3/90"
+            >
+              {COMPANY.email}
+            </a>
           </div>
         </section>
 

@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import Logo from "./Logo";
 import { getSocialLinks } from "@/lib/socialLinks";
+import { COMPANY } from "@/lib/company";
 
 const LEGAL_BASE = "https://api.moavohabits.com/v1";
 
@@ -74,6 +75,19 @@ export default function Footer() {
         <Logo className="[&_span]:text-pure-white" />
         <p className="text-sm font-semibold leading-normal text-pure-white/60">
           {t("research")}
+        </p>
+        <p className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm leading-normal text-pure-white/60">
+          <span className="whitespace-nowrap">{t("companyName")} ·</span>
+          <span className="whitespace-nowrap">
+            {t("businessNo")} {COMPANY.businessRegistrationNo} ·
+          </span>
+          <span className="whitespace-nowrap">{t("location")} ·</span>
+          <a
+            href={`mailto:${COMPANY.email}`}
+            className="whitespace-nowrap underline-offset-4 transition-colors hover:text-pure-white hover:underline"
+          >
+            {COMPANY.email}
+          </a>
         </p>
         <p className="text-text5 text-pure-white/60">
           © {new Date().getFullYear()} MOAVO Habits

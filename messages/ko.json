@@ -32,7 +32,10 @@
     "privacy": "개인정보처리방침",
     "terms": "서비스이용약관",
     "legalNavLabel": "약관 및 정책",
-    "research": "모아보해빗은 행동과학과 습관 시스템을 연구합니다"
+    "research": "모아보해빗은 행동과학과 습관 시스템을 연구합니다",
+    "companyName": "모두의아보카도",
+    "businessNo": "사업자등록번호",
+    "location": "서울"
   },
   "BlogPage": {
     "headline": "모아보해빗 블로그",
@@ -138,6 +141,21 @@
       "body": "이 앱을 만들기 전, 저는 수년간 물리적 공간을 설계해왔습니다 — 리테일 매장, 레스토랑, 카페테리아, 사무실, 병원까지. 공간의 맥락은 매번 달랐지만, 질문은 항상 같았습니다.\n\n공간의 구조가 사람의 동선과 결정, 행동을 어떻게 만드는가?\n\n그리고 이 경험은 하나의 진리를 알려주었습니다.\n사람은 의지로 더 노력해서 바뀌는 게 아니라,\n올바른 행동이 '가장 쉬운 선택'이 되도록 환경이 설계될 때 바뀐다는 것이었습니다.",
       "connector": "모아보해빗은 같은 원리를 평면도가 아니라 스마트폰 화면에 적용하였습니다.",
       "legalName": ""
+    },
+    "company": {
+      "headline": "회사 정보",
+      "nameLabel": "상호",
+      "nameValue": "모두의아보카도 (MOAVO)",
+      "registrationLabel": "사업자등록번호",
+      "locationLabel": "소재지",
+      "locationValue": "대한민국 서울",
+      "representativeLabel": "대표자",
+      "representativeValue": "Jae Dokgo"
+    },
+    "contact": {
+      "headline": "문의",
+      "body": "서비스에 대한 문의나 의견은 아래 이메일로 보내 주세요.",
+      "emailLabel": "이메일"
     },
     "cta": {
       "headline": "당신의 이야기도,\n이렇게 시작될 수 있습니다",
