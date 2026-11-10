@@ -145,8 +145,7 @@
     "company": {
       "headline": "Company",
       "nameLabel": "Company name",
-      "nameValue": "MOAVO (모두의아보카도)",
-      "registrationLabel": "Business registration no.",
+      "nameValue": "MOAVO",
       "locationLabel": "Location",
       "locationValue": "Seoul, Republic of Korea",
       "representativeLabel": "Representative",

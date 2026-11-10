@@ -26,11 +26,9 @@ export default function AboutPage() {
   const founderNameLines = founderHeadlineBlocks[1]?.split("\n") ?? [];
   const moavoHeadlineParts = t("moavo.headline").split("\n\n");
 
-  // Company facts: labels/values from messages, registration number from the
-  // shared COMPANY constants.
+  // Company facts: labels and values come from messages (AboutPage.company).
   const companyRows: [string, string][] = [
     [t("company.nameLabel"), t("company.nameValue")],
-    [t("company.registrationLabel"), COMPANY.businessRegistrationNo],
     [t("company.locationLabel"), t("company.locationValue")],
     [t("company.representativeLabel"), t("company.representativeValue")],
   ];
