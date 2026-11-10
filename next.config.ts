@@ -16,6 +16,21 @@ const nextConfig: NextConfig = {
   images: {
     localPatterns: [{ pathname: "/blog/**" }, { pathname: "/**", search: "" }],
   },
+  // Renamed English posts: keep the old URLs working (301-style, permanent).
+  async redirects() {
+    return [
+      {
+        source: "/en/blog/nudge-vs-sludge",
+        destination: "/en/blog/nudge-vs-sludge-what-is-difference",
+        permanent: true,
+      },
+      {
+        source: "/en/blog/nudge-theory-examples-choice-architecture",
+        destination: "/en/blog/nudge-theory-examples",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
